@@ -15,5 +15,5 @@ func AttendanceRoutes(r *gin.RouterGroup) {
 
 	r.GET("/attendance", h.FindAll)
 	r.POST("/attendance/checkin/:id", middleware.PhotoChecker(h.CreateAttendanceCheckIn))
-	r.POST("/attendance/checkout/:id", h.CreateAttendanceCheckOut)
+	r.POST("/attendance/checkout/:id", middleware.PhotoChecker(h.CreateAttendanceCheckOut))
 }
