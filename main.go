@@ -10,6 +10,10 @@ import (
 )
 
 func main() {
+
+	//Adding Gin Gonic to Release Mode (if you want to use debug mode use gin.DebugMode)
+	gin.SetMode(gin.ReleaseMode)
+
 	r := gin.Default()
 
 	mysql.DatabaseConn()
